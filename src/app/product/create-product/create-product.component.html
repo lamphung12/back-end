@@ -1,0 +1,8 @@
+<h3>create-product </h3>
+<form [formGroup]="form" (submit)="addNewProducts()" >
+  <input type="number" formControlName="id"><br>
+  <input type="text" formControlName="name"><br>
+  <input type="number" formControlName="price"><br>
+  <input type="text" formControlName="description"><br>
+  <button>Create</button>
+</form>
