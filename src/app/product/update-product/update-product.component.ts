@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from "../../service/product.service";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 
 @Component({
   selector: 'app-update-product',
@@ -18,7 +18,8 @@ export class UpdateProductComponent implements OnInit {
   id: number =0;
 
   constructor(private productService: ProductService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
 
       // @ts-ignore
@@ -40,6 +41,7 @@ export class UpdateProductComponent implements OnInit {
     const product = this.form.value;
     this.productService.updateProduct(id, product);
     alert('Cập nhật thành công');
+    this.router.navigate(["/"])
   }
 
 }

@@ -7,6 +7,8 @@ import {DictionaryPageComponent} from "./dictionary/dictionary-page/dictionary-p
 import {WordDetailComponent} from "./dictionary/word-detail/word-detail.component";
 import {UpdateProductComponent} from "./product/update-product/update-product.component";
 import {DeleteProductComponent} from "./product/delete-product/delete-product.component";
+import {ListProductBackendComponent} from "./product-be/list-product-backend/list-product-backend.component";
+import {CreateProductBeComponent} from "./product-be/create-product-be/create-product-be.component";
 
 const routes: Routes = [
   {
@@ -38,6 +40,16 @@ const routes: Routes = [
       {
         path: ':word', component: WordDetailComponent
       }]
+  },
+  {
+    path: 'product-be',
+    component:ListProductBackendComponent,
+    children:[
+      {
+        path: 'create',
+        component: CreateProductBeComponent
+      }
+    ]
   }
 ];
 
